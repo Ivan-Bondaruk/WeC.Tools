@@ -36,5 +36,10 @@ namespace WeC.Operations
             // Calculate the wind power using the formula
             return 0.5 * airDensity * area * Math.Pow(windSpeed, 3);
         }
+
+        public static double CalculateRealPower(double windPower, double efficiency)
+        {
+            return windPower * efficiency;
+        }
     }
 }
