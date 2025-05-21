@@ -21,36 +21,71 @@ namespace WeC.Tools
     public class WindAndEnergy
     {
         public static double AirDensity = 1.225; // kg/m^3
-        public static double CalculateWindPower(double windSpeed, double diamether)
+        public static double CalculateWindPower(double? windSpeed, double? diamether)
         {
-            // Calculate the area of the wind turbine
-            double area = Math.PI * Math.Pow(diamether / 2, 2);
-            // Calculate the wind power using the formula
-            return 0.5 * AirDensity * area * Math.Pow(windSpeed, 3);
+            if (windSpeed.HasValue && diamether.HasValue)
+            {
+                // Calculate the area of the wind turbine
+                var area = Math.PI * Math.Pow(diamether.Value / 2, 2);
+                // Calculate the wind power using the formula
+                return 0.5 * AirDensity * area * Math.Pow(windSpeed.Value, 3);
+            }
+            else
+            {
+                return -1;
+            }
         }
 
-        public static double CalculateWindPower(double airDensity, double windSpeed, double diamether)
+        public static double CalculateWindPower(double? airDensity, double? windSpeed, double? diamether)
         {
-            // Calculate the area of the wind turbine
-            double area = Math.PI * Math.Pow(diamether / 2, 2);
-            // Calculate the wind power using the formula
-            return 0.5 * airDensity * area * Math.Pow(windSpeed, 3);
+            if (airDensity.HasValue && windSpeed.HasValue && diamether.HasValue)
+            {
+                // Calculate the area of the wind turbine
+                var area = Math.PI * Math.Pow(diamether.Value / 2, 2);
+                // Calculate the wind power using the formula
+                return 0.5 * airDensity.Value * area * Math.Pow(windSpeed.Value, 3);
+            }
+            else
+            {
+                return -1;
+            }
         }
 
-        public static double CalculateRealPower(double windPower, double efficiency)
+        public static double CalculateRealPower(double? windPower, double? efficiency)
         {
-            return windPower * efficiency;
+            if (windPower.HasValue && efficiency.HasValue)
+            {
+                return windPower.Value * efficiency.Value;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
-        public static double CalculateAnnualEnergyOutput(double realPower, double hours)
+        public static double CalculateAnnualEnergyOutput(double? realPower, double? hours)
         {
-            return realPower * hours;
+            if (realPower.HasValue && hours.HasValue)
+            {
+                return realPower.Value * hours.Value;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
-        public static double CalculatePaybackPeriod(double installationCost, double energyCost, double annualEnergy)
+        public static double CalculatePaybackPeriod(double? installationCost, double? energyCost, double? annualEnergy)
         {
-            double annualSaving = energyCost * annualEnergy;
-            return installationCost / annualSaving;
+            if (installationCost.HasValue && energyCost.HasValue && annualEnergy.HasValue)
+            {
+                var annualSaving = energyCost * annualEnergy;
+                return installationCost.Value / annualSaving.Value;
+            }
+            else
+            {
+                return -1;
+            }
         }
     }
 }

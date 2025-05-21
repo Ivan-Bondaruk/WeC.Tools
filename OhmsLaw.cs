@@ -1,13 +1,10 @@
 ﻿/*
  * Copyright (C) 2025 Ivan Bondaruk
  * 
- * This file is part of WeC.
- * 
- * It under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * This file is part of WeC.Tools.
  * 
  * Author: Ivan Bondaruk
+ * 
  */
 
 using System;
@@ -21,74 +18,159 @@ namespace WeC.Tools
     public static class OhmsLaw
     {
         #region Ohms Law calculations vor voltage
-        public static double CalculateVRI(double resistance, double current)
+        public static double CalculateVRI(double? resistance, double? current)
         {
-            return current * resistance;
+            if (resistance.HasValue && current.HasValue)
+            {
+                return current.Value * resistance.Value;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
-        public static double CalculateVPI(double power, double current)
+        public static double CalculateVPI(double? power, double? current)
         {
-            return power / current;
+            if (power.HasValue && current.HasValue)
+            {
+                return power.Value / current.Value;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
-        public static double CalculateVPR(double power, double resistance)
+        public static double CalculateVPR(double? power, double? resistance)
         {
-            return Math.Sqrt(power * resistance);
+            if (power.HasValue && resistance.HasValue)
+            {
+                return Math.Sqrt(power.Value * resistance.Value);
+            }
+            else
+            {
+                return -1;
+            }    
         }
+
         #endregion
 
         #region Ohms Law calculations vor current
 
-        public static double CalculateIPR(double power, double resistance)
+        public static double CalculateIPR(double? power, double? resistance)
         {
-            return Math.Sqrt(power / resistance);
+            if (power.HasValue && resistance.HasValue)
+            {
+                return Math.Sqrt(power.Value / resistance.Value);
+            }
+            else
+            {
+                return -1;
+            }
         }
-        public static double CalculateIPV(double power, double voltage)
+        public static double CalculateIPV(double? power, double? voltage)
         {
-            return power / voltage;
+            if (power.HasValue && voltage.HasValue)
+            {
+                return power.Value / voltage.Value;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
-        public static double CalculateIVR(double voltage, double resistance)
+        public static double CalculateIVR(double? voltage, double? resistance)
         {
-            return voltage / resistance;
+            if (voltage.HasValue && resistance.HasValue)
+            {
+                return voltage.Value / resistance.Value;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
         #endregion
 
         #region Ohms Law calculations vor resistance
 
-        public static double CalculateRVI(double voltage, double current)
+        public static double CalculateRVI(double? voltage, double? current)
         {
-            return voltage / current;
+            if (voltage.HasValue && current.HasValue)
+            {
+                return voltage.Value / current.Value;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
-        public static double CalculateRVP(double voltage, double power)
+        public static double CalculateRVP(double? voltage, double? power)
         {
-            return (Math.Pow(voltage, 2) / power);
+            if (voltage.HasValue && power.HasValue)
+            {
+                return (Math.Pow(voltage.Value, 2) / power.Value);
+            }
+            else
+            {
+                return -1;
+            }
         }
 
-        public static double CalculateRPI(double power, double current)
+        public static double CalculateRPI(double? power, double? current)
         {
-            return (power / Math.Pow(current, 2));
+            if (power.HasValue && current.HasValue)
+            {
+                return (power.Value / Math.Pow(current.Value, 2));
+            }
+            else
+            {
+                return -1;
+            }
         }
 
         #endregion
 
         #region Ohms Law calculations vor power
 
-        public static double CalculatePVI(double voltage, double current)
+        public static double CalculatePVI(double? voltage, double? current)
         {
-            return voltage * current;
+            if (voltage.HasValue && current.HasValue)
+            {
+                return voltage.Value * current.Value;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
-        public static double CalculatePIR(double current, double resistance)
+        public static double CalculatePIR(double? current, double? resistance)
         {
-            return Math.Pow(current, 2) * resistance;
+            if (current.HasValue && resistance.HasValue)
+            {
+                return Math.Pow(current.Value, 2) * resistance.Value;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
-        public static double CalculatePVR(double voltage, double resistance)
+        public static double CalculatePVR(double? voltage, double? resistance)
         {
-            return Math.Pow(voltage, 2) / resistance;
+            if (voltage.HasValue && resistance.HasValue)
+            {
+                return Math.Pow(voltage.Value, 2) / resistance.Value;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
         #endregion

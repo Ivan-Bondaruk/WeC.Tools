@@ -20,24 +20,52 @@ namespace WeC.Tools
 {
     public static class Circle
     {
-        public static double CircleRadius(double diameter)
+        public static double CircleRadius(double? diameter)
         {
-            return diameter / 2;
+            if (diameter.HasValue)
+            {
+                return diameter.Value / 2;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
-        public static double CircleDiameter(double radius)
+        public static double CircleDiameter(double? radius)
         {
-            return radius * radius;
+            if (radius.HasValue)
+            {
+                return radius.Value * radius.Value;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
-        public static double CircleArea(double radius)
+        public static double CircleArea(double? radius)
         {
-            return Math.PI * Math.Pow(radius, 2);
+            if (radius.HasValue)
+            {
+                return Math.PI * Math.Pow(radius.Value, 2);
+            }
+            else
+            {
+                return -1;
+            }
         }
 
-        public static double CircleCircumference(double radius)
+        public static double CircleCircumference(double? radius)
         {
-            return 2 * Math.PI * radius;
+            if (radius.HasValue)
+            {
+                return 2 * Math.PI * radius.Value;
+            }    
+            else
+            {
+                return -1;
+            }
         }
     }
 }
