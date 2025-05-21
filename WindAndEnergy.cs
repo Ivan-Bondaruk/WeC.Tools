@@ -1,4 +1,4 @@
-﻿/*
+﻿ /*
  * Copyright (C) 2025 Ivan Bondaruk
  * 
  * This file is part of WeC.
@@ -16,7 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WeC.Operations
+namespace WeC.Tools
 {
     public class WindAndEnergy
     {
@@ -40,6 +40,17 @@ namespace WeC.Operations
         public static double CalculateRealPower(double windPower, double efficiency)
         {
             return windPower * efficiency;
+        }
+
+        public static double CalculateAnnualEnergyOutput(double realPower, double hours)
+        {
+            return realPower * hours;
+        }
+
+        public static double CalculatePaybackPeriod(double installationCost, double energyCost, double annualEnergy)
+        {
+            double annualSaving = energyCost * annualEnergy;
+            return installationCost / annualSaving;
         }
     }
 }

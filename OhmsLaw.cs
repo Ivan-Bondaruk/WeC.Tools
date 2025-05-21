@@ -16,7 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WeC.Operations
+namespace WeC.Tools
 {
     public static class OhmsLaw
     {
@@ -79,6 +79,16 @@ namespace WeC.Operations
         public static double CalculatePVI(double voltage, double current)
         {
             return voltage * current;
+        }
+
+        public static double CalculatePIR(double current, double resistance)
+        {
+            return Math.Pow(current, 2) * resistance;
+        }
+
+        public static double CalculatePVR(double voltage, double resistance)
+        {
+            return Math.Pow(voltage, 2) / resistance;
         }
 
         #endregion

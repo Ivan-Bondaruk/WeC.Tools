@@ -16,7 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WeC.Operations
+namespace WeC.Tools
 {
     public static class Circle
     {
