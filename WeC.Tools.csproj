@@ -1,14 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+	<Copyright>© 2025 Ivan Bondaruk</Copyright>
+	<PackageProjectUrl>https://ivan-bondaruk.github.io/WeC/</PackageProjectUrl>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <RootNamespace>WeC.Tools</RootNamespace>
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <UseWinUI>true</UseWinUI>
+    <Title>Wec.Tools</Title>
+    <RepositoryUrl>https://github.com/Ivan-Bondaruk/WeC.Tools</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>CSharp, Windows, OpenSource, Helpers, WinUI</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<PackageLicenseFile>LICENSE</PackageLicenseFile>
+	<Authors>$(Authors)</Authors>
+	<Description>Libs provide some operation for calculating that used in WeC app</Description>
+	<PackageReleaseNotes>First version</PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250401001" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4188" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250513003" />
   </ItemGroup>
-  
+
+	<ItemGroup>
+		<None Include="LICENSE" Pack="true" PackagePath="" />
+		<None Include="README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+
 </Project>
