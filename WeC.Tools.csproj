@@ -14,7 +14,7 @@
     <PackageTags>CSharp, Windows, OpenSource, Helpers, WinUI</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	<PackageLicenseFile>LICENSE</PackageLicenseFile>
-	<Authors>$(Authors)</Authors>
+	<Authors>Ivan Bondaruk</Authors>
 	<Description>Libs provide some operation for calculating that used in WeC app</Description>
 	<PackageReleaseNotes>First version</PackageReleaseNotes>
   </PropertyGroup>
